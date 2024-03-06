@@ -12,7 +12,7 @@ const ProductListing = () => {
     const products = [
         {
             id: '1',
-            title: 'Biryani',
+            title: '',
             image: require("../assets/img/Biryani_2.jpg"),
             price: "150Rs",
             calories: 300,
@@ -60,7 +60,7 @@ const ProductListing = () => {
         },
         {
             id: '3',
-            title: 'Chole Bhature',
+            title: '',
             image: require("../assets/img/Chole_Bature.jpg"),
             price: "100Rs",
             calories: 300,
@@ -84,7 +84,7 @@ const ProductListing = () => {
         },
         {
             id: '4',
-            title: 'Rolls',
+            title: '',
             image: require("../assets/img/Rolls.jpg"),
             price: "120Rs", // Increased price for variation
             calories: 300,

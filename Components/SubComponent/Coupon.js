@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, StyleSheet, Clipboard } from 'react-native'; // Import Clipboard
+import { View, Text, Pressable, StyleSheet, Clipboard } from 'react-native'; 
 import { FontAwesome } from '@expo/vector-icons';
 
 const Coupon = () => {
@@ -7,7 +7,7 @@ const Coupon = () => {
     const couponCode = 'FLAT80';
 
     const copyToClipboard = () => {
-        Clipboard.setString(couponCode); // Use Clipboard module
+        Clipboard.setString(couponCode);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
