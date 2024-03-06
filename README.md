@@ -27,6 +27,25 @@ My Food App is a mobile application designed to help users explore and order a v
 
 For a visual demonstration of how to use the app, watch the following video: [ProductListing Demo](https://youtu.be/E8_3gAy3UEQ)
 
+# ScreenShots of App
+
+### Showing the Home Screen
+
+<!-- Screenshots arranged horizontally with descriptions -->
+<p align="center">
+  <img src="screenshots/IMG-20240306-WA0001.jpg" alt="Screenshot 1" width="200">
+  <img src="screenshots/IMG-20240306-WA0002.jpg" alt="Screenshot 2" width="200">
+  <img src="screenshots/IMG-20240306-WA0003.jpg" alt="Screenshot 3" width="200">
+  <img src="screenshots/IMG-20240306-WA0004.jpg" alt="Screenshot 4" width="200">
+</p>
+
+<p align="">
+  <em>Figure 1: Showing the copied coupon code</em> <br>
+  <em>Figure 2: Showing recommended and new arrival products</em> <br>
+  <em>Figure 3: Showing products sorted from high to low price</em> <br>
+  <em>Figure 4: Showing details of a product</em><br>
+</p>
+
 ## Customization
 
 To customize the app for your specific needs, follow these steps:
