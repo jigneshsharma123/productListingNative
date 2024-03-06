@@ -25,7 +25,7 @@ My Food App is a mobile application designed to help users explore and order a v
 
 ## Demo Video
 
-For a visual demonstration of how to use the app, watch the following video: [My Food App Demo](https://youtu.be/E8_3gAy3UEQ)
+For a visual demonstration of how to use the app, watch the following video: [ProductListing Demo](https://youtu.be/E8_3gAy3UEQ)
 
 ## Customization
 
