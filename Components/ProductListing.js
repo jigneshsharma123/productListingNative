@@ -1,4 +1,3 @@
-// ProductListing.js
 import React, { useState } from 'react';
 import { View, Text, Modal, FlatList, Image, ScrollView, Pressable, TouchableOpacity, StyleSheet } from 'react-native';
 import Coupon from './Coupon';
@@ -8,12 +7,13 @@ import NewArrivals from './NewArrivals ';
 const ProductListing = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedProduct, setSelectedProduct] = useState(null);
+    const [sortOrder, setSortOrder] = useState('asc');
     const products = [
         {
             id: '1',
-            title: '',
+            title: 'Biryani',
             image: require("../assets/img/Biryani_2.jpg"),
-            price: "100Rs",
+            price: "150Rs", 
             calories: 300,
             description: 'Delicious biryani with aromatic spices.',
             category: 'Vegetarian',
@@ -34,12 +34,13 @@ const ProductListing = () => {
             }
         },
         {
-            id: '1',
-            title: '',
+            id: '10',
+            title: 'Chinese',
             image: require("../assets/img/Chinese.jpg"),
-            price: "100Rs",
+            price: "200Rs", 
             calories: 300,
-            description: 'Delicious biryani with aromatic spices.',
+            description: 'Delicious Chinese food.',
+            category: 'Non-vegetarian',
             nutritionFacts: {
                 servingSize: '100 gram',
                 calories: '300',
@@ -57,13 +58,13 @@ const ProductListing = () => {
             }
         },
         {
-            id: '1',
-            title: '',
+            id: '3',
+            title: 'Chole Bhature',
             image: require("../assets/img/Chole_Bature.jpg"),
-            price: "100Rs",
+            price: "100Rs", 
             calories: 300,
-            description: 'Delicious biryani with aromatic spices.',
-            category : 'Vegan',
+            description: 'Delicious Chole Bhature.',
+            category: 'Vegan',
             nutritionFacts: {
                 servingSize: '100 gram',
                 calories: '300',
@@ -81,13 +82,13 @@ const ProductListing = () => {
             }
         },
         {
-            id: '1',
-            title: '',
+            id: '4',
+            title: 'Rolls',
             image: require("../assets/img/Rolls.jpg"),
-            price: "100Rs",
+            price: "120Rs", // Increased price for variation
             calories: 300,
-            description: 'Delicious biryani with aromatic spices.',
-            category : 'Non-vegetarian',
+            description: 'Delicious Rolls.',
+            category: 'Vegetarian',
             nutritionFacts: {
                 servingSize: '100 gram',
                 calories: '300',
@@ -107,7 +108,16 @@ const ProductListing = () => {
     ];
 
     const filteredProducts = selectedCategory ? products.filter(product => product.category === selectedCategory) : products;
-
+    // Sort products based on price
+    const sortedProducts = filteredProducts.slice().sort((a, b) => {
+        const priceA = parseFloat(a.price);
+        const priceB = parseFloat(b.price);
+        return sortOrder === 'asc' ? priceA - priceB : priceB - priceA;
+    });
+    // Function to handle sorting order
+    const handleSortOrder = () => {
+        setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    };
     const ProductItem = ({ item }) => {
         const handleAddToCart = () => {
             console.log("Item added to cart:", item);
@@ -149,8 +159,13 @@ const ProductListing = () => {
                 </View>
                 <PopularFoodList />
                 <Coupon />
+                <TouchableOpacity style={styles.sortButton} onPress={handleSortOrder}>
+                    <Text style={styles.sortButtonText}>
+                        Sort by Price {sortOrder === 'asc' ? 'Low to High' : 'High to Low'}
+                    </Text>
+                </TouchableOpacity>
                 <FlatList
-                    data={filteredProducts}
+                    data={sortedProducts}
                     renderItem={({ item }) => <ProductItem item={item} />}
                     keyExtractor={item => item.id}
                     numColumns={2}
@@ -203,21 +218,21 @@ const PopularFoodList = () => {
             category: 'Non-vegetarian'
         },
         {
-            id: '5',
+            id: '6',
             title: 'Chinese',
             image: require("../assets/img/Chinese.jpg"),
             price: "100Rs",
             category: 'Non-vegetarian'
         },
         {
-            id: '6',
+            id: '7',
             title: 'Biryani',
             image: require("../assets/img/Biryani_2.jpg"),
             price: "100Rs",
             category: 'Vegetarian'
         },
         {
-            id: '6',
+            id: '8',
             title: 'Rolls',
             image: require("../assets/img/Rolls.jpg"),
             price: "100Rs",
@@ -318,6 +333,22 @@ const styles = StyleSheet.create({
         fontFamily: 'sans-serif',
         fontSize: 16,
     },
+    sortButton: {
+        marginTop: 5,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#000000',
+        alignSelf: 'center',
+    },
+    sortButtonText: {
+        color: '#000000',
+        fontFamily: 'sans-serif',
+        fontSize: 16,
+        fontWeight: 'bold',
+
+    },
     popularFoodContainer: {
         paddingHorizontal: 10,
         marginTop: 90,
@@ -417,4 +448,5 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
 });
+
 export default ProductListing;

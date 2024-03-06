@@ -44,7 +44,7 @@ const TabNavigator = () => {
         >
             <Tab.Screen name="Home" component={HomeScreen} />
             <Tab.Screen name="QR Scanner" component={QRScannerScreen}
-          options={{ tabBarIcon: ({ color, size }) => (<FontAwesome name="qrcode" size={50} color={color} style={{}} />) }}
+                options={{ tabBarIcon: ({ color, size }) => (<FontAwesome name="qrcode" size={50} color={color} style={{}} />) }}
             />
             <Tab.Screen name="Cart" component={CartScreen} />
         </Tab.Navigator>

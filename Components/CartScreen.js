@@ -1,48 +1,30 @@
-import React from 'react';
-import { Text, View, FlatList, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from "react-native"
 
-const CartScreen = ({ route }) => {
-    console.log(route);
-
-    const totalPrice = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-
+const CartScreen = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.heading}>Cart</Text>
-            <FlatList
-                data={cartItems}
-                renderItem={({ item }) => (
-                    <View style={styles.cartItem}>
-                        <Text>{item.title}</Text>
-                        <Text>Quantity: {item.quantity}</Text>
-                        <Text>Price: {item.price * item.quantity}Rs</Text>
-                    </View>
-                )}
-                keyExtractor={item => item.id}
-            />
-            <Text style={styles.total}>Total: {totalPrice}Rs</Text>
+            <Text style={styles.Text}>
+                CartScreen
+            </Text>
         </View>
-    );
-};
+    )
+}
+export default CartScreen;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        padding: 20,
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: [{ translateX: -50}, { translateY: -50 }],
+        backgroundColor: '#2dd'
     },
-    heading: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginBottom: 10,
-    },
-    cartItem: {
-        marginBottom: 10,
-    },
-    total: {
-        marginTop: 10,
-        fontSize: 18,
-        fontWeight: 'bold',
-    },
-});
+    Text: {
+        backgroundColor: 'black',
+        padding: 10,
+        color : 'white',
+        fontWeight:'bold',
+        fontSize : 20,
 
-export default CartScreen;
+    }
+})
