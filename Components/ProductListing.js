@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, Modal, FlatList, Image, ScrollView, Pressable, TouchableOpacity, StyleSheet } from 'react-native';
-import Coupon from './Coupon';
-import RecommendedProducts from './RecommendedProducts';
-import NewArrivals from './NewArrivals ';
+import PopularFoodList from './SubComponent/PopularFoodList'
+import Coupon from './SubComponent/Coupon';
 
+import RecommendedProducts from './SubComponent/RecommendedProducts';
+import NewArrivals from './SubComponent/NewArrivals ';
 const ProductListing = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -13,7 +14,7 @@ const ProductListing = () => {
             id: '1',
             title: 'Biryani',
             image: require("../assets/img/Biryani_2.jpg"),
-            price: "150Rs", 
+            price: "150Rs",
             calories: 300,
             description: 'Delicious biryani with aromatic spices.',
             category: 'Vegetarian',
@@ -37,7 +38,7 @@ const ProductListing = () => {
             id: '10',
             title: 'Chinese',
             image: require("../assets/img/Chinese.jpg"),
-            price: "200Rs", 
+            price: "200Rs",
             calories: 300,
             description: 'Delicious Chinese food.',
             category: 'Non-vegetarian',
@@ -61,7 +62,7 @@ const ProductListing = () => {
             id: '3',
             title: 'Chole Bhature',
             image: require("../assets/img/Chole_Bature.jpg"),
-            price: "100Rs", 
+            price: "100Rs",
             calories: 300,
             description: 'Delicious Chole Bhature.',
             category: 'Vegan',
@@ -208,58 +209,7 @@ const ProductListing = () => {
     );
 };
 
-const PopularFoodList = () => {
-    const popularFood = [
-        {
-            id: '5',
-            title: 'Burger',
-            image: require("../assets/img/Burger.jpg"),
-            price: "100Rs",
-            category: 'Non-vegetarian'
-        },
-        {
-            id: '6',
-            title: 'Chinese',
-            image: require("../assets/img/Chinese.jpg"),
-            price: "100Rs",
-            category: 'Non-vegetarian'
-        },
-        {
-            id: '7',
-            title: 'Biryani',
-            image: require("../assets/img/Biryani_2.jpg"),
-            price: "100Rs",
-            category: 'Vegetarian'
-        },
-        {
-            id: '8',
-            title: 'Rolls',
-            image: require("../assets/img/Rolls.jpg"),
-            price: "100Rs",
-            category: 'Vegetarian'
-        },
-    ];
 
-    const PopularFoodItem = ({ item }) => (
-        <View style={styles.popularFoodItem}>
-            <Image source={item.image} style={styles.popularFoodImage} />
-            <Text style={styles.popularFoodTitle}>{item.title}</Text>
-        </View>
-    );
-
-    return (
-        <View style={styles.popularFoodContainer}>
-            <Text style={styles.popularFoodHeading}>Popular Food</Text>
-            <FlatList
-                data={popularFood}
-                renderItem={({ item }) => <PopularFoodItem item={item} />}
-                keyExtractor={item => item.id}
-                horizontal
-                showsHorizontalScrollIndicator={false}
-            />
-        </View>
-    );
-};
 
 const styles = StyleSheet.create({
     container: {
@@ -349,30 +299,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
 
     },
-    popularFoodContainer: {
-        paddingHorizontal: 10,
-        marginTop: 90,
-        marginBottom: 10,
-    },
-    popularFoodHeading: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        marginBottom: 10,
-    },
-    popularFoodItem: {
-        marginRight: 15,
-        alignItems: 'center',
-    },
-    popularFoodImage: {
-        width: 120,
-        height: 120,
-        borderRadius: 10,
-        marginBottom: 5,
-    },
-    popularFoodTitle: {
-        fontSize: 14,
-        textAlign: 'center',
-    },
+
     modalContainer: {
         flex: 1,
         alignItems: 'center',

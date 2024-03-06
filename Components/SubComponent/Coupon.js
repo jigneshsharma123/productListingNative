@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, Pressable, StyleSheet, Clipboard } from 'react-native'; // Import Clipboard
 import { FontAwesome } from '@expo/vector-icons';
 
 const Coupon = () => {
@@ -7,13 +7,9 @@ const Coupon = () => {
     const couponCode = 'FLAT80';
 
     const copyToClipboard = () => {
-        if (Clipboard) {
-            Clipboard.setString(couponCode);
-            setCopied(true);
-            setTimeout(() => setCopied(false), 2000);
-        } else {
-            console.log('Clipboard module is not available.');
-        }
+        Clipboard.setString(couponCode); // Use Clipboard module
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
     };
 
     return (

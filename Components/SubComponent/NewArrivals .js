@@ -6,21 +6,21 @@ const NewArrivals = () => {
         {
             id: '1',
             title: 'New',
-            image: require('../assets/img/North_Indian_4.jpg'),
+            image: require('./img/North_Indian_4.jpg'),
             price: "180Rs",
             category: 'New Arrival'
         },
         {
             id: '2',
             title: 'New',
-            image: require('../assets/img/North_Indian_4.jpg'),
+            image: require('./img/North_Indian_4.jpg'),
             price: "220Rs",
             category: 'New Arrival'
         },
         {
             id: '3',
             title: 'New',
-            image: require('../assets/img/North_Indian_4.jpg'),
+            image: require('./img/North_Indian_4.jpg'),
             price: "180Rs",
             category: 'New Arrival'
         },

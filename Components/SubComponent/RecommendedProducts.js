@@ -6,21 +6,21 @@ const RecommendedProducts = () => {
         {
             id: '1',
             title: 'Recommended ',
-            image: require('../assets/img/Chole_Bature.jpg'),
+            image: require('./img/Chole_Bature.jpg'),
             price: "200Rs",
             category: 'Recommended'
         },
         {
             id: '2',
             title: 'Recommended ',
-            image: require('../assets/img/Poori.jpg'),
+            image: require('./img/Poori.jpg'),
             price: "250Rs",
             category: 'Recommended'
         },
         {
             id: '2',
             title: 'Recommended',
-            image: require('../assets/img/Pav_Bhaji.jpg'),
+            image: require('./img/Pav_Bhaji.jpg'),
             price: "250Rs",
             category: 'Recommended'
         },
